@@ -1,0 +1,57 @@
+@use "../../../../styles/mixins" as *;
+
+.bikes {
+  padding-block: 70px 100px;
+  .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--c-lightgray);
+      background-color: var(--c-white);
+      outline: 2px solid transparent;
+      outline-offset: 6px;
+      transition: 0.3 ease-in-out;
+
+      &::before {
+        content: "";
+        @include mask-contain;
+        mask-image: var(--icon-arrow-right);
+        width: 16px;
+        height: 16px;
+        background-color: var(--c-dark);
+      }
+
+      &:focus {
+        outline-color: rgba(255, 40, 91, 0.5);
+        outline-style: 2px;
+      }
+
+      &.active {
+        border-color: var(--c-pink);
+        background-color: rgba(255, 40, 91, 0.1);
+
+        &::before {
+          background-color: #6ec1e4;
+        }
+      }
+      @include hover {
+        background-color: rgba(255, 40, 91, 0.1);
+      }
+    }
+  }
+
+  .bikes-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
