@@ -13,11 +13,17 @@ window.addEventListener("scroll", () => {
 //swiper
 
 const swiper = new Swiper(".feedback .swiper", {
-  slidesPerView: 2,
-
+  slidesPerView: 1,
+  centeredSlides: true,
   navigation: {
     nextEl: ".slider-btn--next",
     prevEl: ".slider-btn--prev",
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
   },
 });
 
