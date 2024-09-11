@@ -7,16 +7,7 @@
 @use "./request/request";
 .home-page {
   .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
     background-color: transparent;
-
-    .header-bottom {
-      padding-block: 10px 30px;
-    }
 
     &.scrolled {
       background-color: var(--c-dark);
