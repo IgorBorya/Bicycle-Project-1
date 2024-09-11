@@ -10,6 +10,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
+//swiper
+
 const swiper = new Swiper(".feedback .swiper", {
   slidesPerView: 2,
 
@@ -42,6 +44,20 @@ const showTabs = (tabsNav, tabsContent) => {
   });
 };
 
-const tabsNav = document.querySelectorAll(`.bikes .tabs-nav__link`);
+const tabsNav = document.querySelector(`.bikes .tabs-nav__link`);
 const tabsContent = document.querySelectorAll(`.bikes .tabs-content`);
 showTabs(tabsNav, tabsContent);
+
+// burger
+
+const burgerBtnE1 = document.querySelector(".burger");
+
+const handleBurgerClick = () => {
+  burgerBtnE1.classList.toggle("active");
+};
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("burger")) {
+    handleBurgerClick();
+  }
+});
